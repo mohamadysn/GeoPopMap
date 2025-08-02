@@ -1,0 +1,466 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Prerequisites" href="prerequisites.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+        <title>GeoPopMap 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">GeoPopMap 1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  <span class="sidebar-brand-text">GeoPopMap 1.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Tutorial Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_management_and_merging.html">Data Management and Merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_visualization.html">Map Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pca.html">Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="correlation_analysis.html">Correlation Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anova_analysis.html">ANOVA Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistical_analysis.html">Statistical Analysis</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/index.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="welcome-to-the-geopopmap-tutorial">
+<h1>Welcome to the GeoPopMap Tutorial<a class="headerlink" href="#welcome-to-the-geopopmap-tutorial" title="Link to this heading">¶</a></h1>
+<section id="project-contributors">
+<h2>Project Contributors<a class="headerlink" href="#project-contributors" title="Link to this heading">¶</a></h2>
+<p><strong>Developer &amp; Tutorial Author</strong></p>
+<ul class="simple">
+<li><p>Mohamad Yassine (<a class="reference external" href="mailto:mohamad&#46;a&#46;ysn&#37;&#52;&#48;gmail&#46;com">mohamad<span>&#46;</span>a<span>&#46;</span>ysn<span>&#64;</span>gmail<span>&#46;</span>com</a>)</p></li>
+</ul>
+<p><strong>Collaborators</strong></p>
+<ul class="simple">
+<li><p>Sarah Ben Sadoun (<a class="reference external" href="mailto:sarah&#46;ben-sadoun&#37;&#52;&#48;inrae&#46;fr">sarah<span>&#46;</span>ben-sadoun<span>&#64;</span>inrae<span>&#46;</span>fr</a>)</p></li>
+<li><p>Yannick Olivier (<a class="reference external" href="mailto:yannick&#46;olivier&#37;&#52;&#48;inrae&#46;fr">yannick<span>&#46;</span>olivier<span>&#64;</span>inrae<span>&#46;</span>fr</a>)</p></li>
+<li><p>Stephane Nicolas (<a class="reference external" href="mailto:stephane&#46;nicolas&#37;&#52;&#48;inrae&#46;fr">stephane<span>&#46;</span>nicolas<span>&#64;</span>inrae<span>&#46;</span>fr</a>)</p></li>
+<li><p>Franck Gauthier (<a class="reference external" href="mailto:franck&#46;gauthier&#37;&#52;&#48;inrae&#46;fr">franck<span>&#46;</span>gauthier<span>&#64;</span>inrae<span>&#46;</span>fr</a>)</p></li>
+<li><p>Agustin-Oscar Galaretto (<a class="reference external" href="mailto:agustin-oscar&#46;galaretto&#37;&#52;&#48;inrae&#46;fr">agustin-oscar<span>&#46;</span>galaretto<span>&#64;</span>inrae<span>&#46;</span>fr</a>)</p></li>
+<li><p>Valentin Bourdin (<a class="reference external" href="mailto:valentin&#46;bourdin1&#37;&#52;&#48;etu&#46;u-paris&#46;fr">valentin<span>&#46;</span>bourdin1<span>&#64;</span>etu<span>&#46;</span>u-paris<span>&#46;</span>fr</a>)</p></li>
+</ul>
+<p>This tutorial will guide you through the process of using GeoPopMap, a comprehensive R Shiny application for analyzing and visualizing multi-dimensional agricultural data.</p>
+<figure class="align-center" id="id1">
+<img alt="Main Interface" src="_images/GeoPopMap_log.png" />
+<figcaption>
+<p><span class="caption-text">The main interface of the GeoPopMap application.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
+<p>This tutorial is divided into several sections, each covering a specific aspect of the application. We recommend following them in order to get a complete understanding of the workflow.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Tutorial Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="prerequisites.html">Prerequisites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="prerequisites.html#required-software">Required Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prerequisites.html#system-dependencies">System Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prerequisites.html#required-r-packages">Required R Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prerequisites.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#installation-steps">Installation Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#running-the-application">Running the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#test-data">Test Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_management_and_merging.html">Data Management and Merging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_management_and_merging.html#interface-overview">Interface Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_management_and_merging.html#advanced-import-options-common-to-all-data-types">Advanced Import Options (Common to All Data Types)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_management_and_merging.html#details-by-data-type">Details by Data Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_management_and_merging.html#actions-after-import">Actions After Import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_management_and_merging.html#merging-data">Merging Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_management_and_merging.html#tips-and-best-practices">Tips and Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_management_and_merging.html#visual-summary-of-options-by-data-type">Visual Summary of Options by Data Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_management_and_merging.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="map_visualization.html">Map Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="map_visualization.html#accessing-the-map-interface">1. Accessing the Map Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_visualization.html#map-display-and-navigation">2. Map Display and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_visualization.html#coloring-and-variable-selection">3. Coloring and Variable Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_visualization.html#advanced-customization">4. Advanced Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_visualization.html#interactive-point-selection">5. Interactive Point Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_visualization.html#viewing-and-exporting-selected-data">6. Viewing and Exporting Selected Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_visualization.html#reset-and-export-map">7. Reset and Export Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_visualization.html#use-cases-and-best-practices">8. Use Cases and Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_visualization.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pca.html">Principal Component Analysis (PCA)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#analysis-type-pca-vs-pcoa">1. Analysis Type: PCA vs PCoA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#variable-selection">2. Variable Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#pca-parameters">3. PCA Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#visualization-modes">4. Visualization Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#grouping-and-coloring">5. Grouping and Coloring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#plot-customization">6. Plot Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#variance-explained">7. Variance Explained</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#variable-contributions">8. Variable Contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#data-export">9. Data Export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#interactive-plot">10. Interactive Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#handling-missing-data">11. Handling Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#example-workflow">11. Example Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="correlation_analysis.html">Correlation Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="correlation_analysis.html#variable-selection">1. Variable Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="correlation_analysis.html#running-the-analysis">2. Running the Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="correlation_analysis.html#results-and-visualization">3. Results and Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="correlation_analysis.html#plot-customization">4. Plot Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="correlation_analysis.html#export">5. Export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="correlation_analysis.html#handling-missing-data">6. Handling Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="correlation_analysis.html#example-workflow">7. Example Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="correlation_analysis.html#best-practices">8. Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="correlation_analysis.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="anova_analysis.html">ANOVA Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="anova_analysis.html#when-is-anova-available">1. When is ANOVA available?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anova_analysis.html#how-to-perform-the-analysis">2. How to perform the analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anova_analysis.html#interpreting-the-results">3. Interpreting the Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anova_analysis.html#exporting-results">4. Exporting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anova_analysis.html#best-practices">5. Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anova_analysis.html#limitations">6. Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anova_analysis.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistical_analysis.html">Statistical Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistical_analysis.html#the-statistical-analysis-interface">1. The Statistical Analysis Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_analysis.html#variable-selection-and-data-scope">2. Variable Selection and Data Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_analysis.html#distribution-and-summary-for-all-data">3. Distribution and Summary for All Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_analysis.html#distribution-and-summary-for-selected-data">4. Distribution and Summary for Selected Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_analysis.html#interpreting-the-results">5. Interpreting the Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_analysis.html#exporting-results">6. Exporting Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_analysis.html#best-practices">7. Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistical_analysis.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="introduction-to-geopopmap">
+<h2>Introduction to GeoPopMap<a class="headerlink" href="#introduction-to-geopopmap" title="Link to this heading">¶</a></h2>
+<p>GeoPopMap is a comprehensive R Shiny application designed for the analysis and visualization of multi-dimensional agricultural data. The application provides an integrated platform for handling and analyzing climatic, genotypic, and phenotypic data with a focus on spatial relationships and statistical analysis.</p>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Data Upload and Validation</strong>: Supports various data formats and validates data to ensure quality.</p></li>
+<li><p><strong>Data Merging</strong>: Merge different datasets to create a comprehensive analysis-ready dataset.</p></li>
+<li><p><strong>Interactive Map Visualization</strong>: Visualize geographic data and explore spatial patterns.</p></li>
+<li><p><strong>PCA and Correlation Analysis</strong>: Perform statistical analyses to uncover relationships in your data.</p></li>
+<li><p><strong>ANOVA and Statistical Summaries</strong>: Conduct analysis of variance and generate statistical summaries.</p></li>
+</ul>
+</section>
+<section id="about-this-tutorial">
+<h2>About This Tutorial<a class="headerlink" href="#about-this-tutorial" title="Link to this heading">¶</a></h2>
+<p>This tutorial is designed to be interactive. At each step, we will show you what to do and what to expect. We will use placeholders for screenshots that you can replace with your own as you follow along.</p>
+<figure class="align-center">
+<img alt="Placeholder for a screenshot" src="_images/Overview.png" />
+</figure>
+<figure class="align-center">
+<img alt="Placeholder for a screenshot" src="_images/Overview2.png" />
+</figure>
+<p>Let’s begin by setting up the required prerequisites.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="prerequisites.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Prerequisites</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Mohamad Yassine
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Welcome to the GeoPopMap Tutorial</a><ul>
+<li><a class="reference internal" href="#project-contributors">Project Contributors</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#introduction-to-geopopmap">Introduction to GeoPopMap</a></li>
+<li><a class="reference internal" href="#key-features">Key Features</a></li>
+<li><a class="reference internal" href="#about-this-tutorial">About This Tutorial</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>
