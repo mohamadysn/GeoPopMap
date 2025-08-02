@@ -23,7 +23,7 @@ jobs:
         docker save geopopmap_docker_img > geopopmap_docker_img.tar
         
     - name: Upload Docker image artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: geopopmap-docker-image
         path: code/GeoPopMap_app/geopopmap_docker_img.tar
