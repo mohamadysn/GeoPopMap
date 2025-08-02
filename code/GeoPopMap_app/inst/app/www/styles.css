@@ -1,0 +1,119 @@
+.background-panel {
+  position: relative;
+  padding: 20px;
+  border-radius: 5px;
+  background-image: url('world-map-146505.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; /* <-- Centrer l'image */
+  overflow: hidden;
+}
+
+
+
+.background-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8); /* White overlay with 70% transparency */
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.background-panel * {
+  position: relative;
+  z-index: 2; /* Ensures content appears above the overlay */
+}
+
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+.app-title {
+        font-size: 36px;
+        color: #2E8B57;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+
+.subtitle {
+        font-size: 18px;
+        color: #555555; /* A subtle gray for the subtitle */
+        text-align: center;
+        font-style: italic;
+        margin-bottom: 30px;
+      }
+
+.title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; /* Adjust width */
+        height: 150px; /* Adjust height */
+        padding: 10px; /* Adjust padding */
+      }
+.logo-img img {
+  max-height: 100px; /* Adjust image height */
+
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Boutons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Style des couleurs */
+.colour-input {
+    width: 100%;
+}
+
+
+
+.tooltip-custom {
+  position: relative;
+  cursor: pointer;
+}
+.tooltip-custom .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: #1e90ff;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 10;
+  left: 60%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 13px;
+}
+.tooltip-custom:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

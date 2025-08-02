@@ -1,0 +1,13 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+dev_history.R
+^dev$
+$run_dev.*
+^.here$
+^LICENSE\.md$
+^Launch_app\.R$
+^Launch_app_manual\.R$
+^Needed_packages\.R$
+^Dockerfile$
+^geopopmap_docker_img\.tar$

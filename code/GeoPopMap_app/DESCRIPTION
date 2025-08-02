@@ -1,0 +1,59 @@
+Package: GeoPopMap
+Type: Package
+Title: A Modular Shiny Application for Data Integration and Visualization
+Version: 0.1.0
+Authors@R: 
+    person(given = "Mohamad",
+           family = "Yassine",
+           role = c("aut", "cre"),
+           email = "mohamad.a.ysn@gmail.com")
+Description: This package provides a Shiny application built using the golem framework. It includes modular components to upload, validate, merge, and visualize climatic, genotypic, phenotypic, and structural data.
+Depends:
+    R (>= 4.2.0)
+License: GPL-3
+Imports:
+    shiny,
+    shinythemes,
+    ggplot2,
+    shinyjs,
+    shinyWidgets,
+    maps,
+    dplyr,
+    plotly,
+    colourpicker,
+    rcompanion,
+    multcompView,
+    multcomp,
+    car,
+    svglite,
+    RColorBrewer,
+    leaflet,
+    jsonlite,
+    chromote,
+    htmlwidgets,
+    base64enc,
+    rsvg,
+    leaflet.extras,
+    data.table,
+    promises,
+    future,
+    FactoMineR,
+    factoextra,
+    DT,
+    viridis,
+    missMDA,
+    shinydashboard,
+    golem,
+    readxl,
+    reshape2,
+    visNetwork,
+    webshot,
+    MASS,
+    sf,
+    purrr,
+    config,
+    scales,
+    ape
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
