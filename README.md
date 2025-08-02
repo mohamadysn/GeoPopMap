@@ -46,7 +46,7 @@ You will need **R**, **RStudio**, **Git**, and **Docker**. For detailed installa
 3.  **Load the Docker image**:
     `docker load -i /path/to/image.tar`
 
-For detailed, step-by-step instructions, please see the [Usage Guide](https://your-username.github.io/GeoPopMap/usage.html).
+For detailed, step-by-step instructions, please see the [Usage Guide](https://mohamadysn.github.io/GeoPopMap/usage.html).
 
 ---
 
@@ -66,7 +66,7 @@ This will launch the application inside a Docker container. Open the URL provide
 
 For a complete, step-by-step tutorial, please visit our documentation website:
 
-[**Full Documentation Tutorial**](https://your-username.github.io/GeoPopMap/index.html)
+[**Full Documentation Tutorial**](https://mohamadysn.github.io/GeoPopMap/index.html)
 
 ---
 
