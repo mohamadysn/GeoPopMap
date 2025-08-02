@@ -15,6 +15,28 @@ permissions:
   actions: read
 
 jobs:
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Build Docker image
+      run: |
+        cd code/GeoPopMap_app
+        docker build -t geopopmap_docker_img .
+        docker save geopopmap_docker_img > geopopmap_docker_img.tar
+        
+    - name: Upload Docker image artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: geopopmap-docker-image
+        path: code/GeoPopMap_app/geopopmap_docker_img.tar
+        retention-days: 1
+
   build-docs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
